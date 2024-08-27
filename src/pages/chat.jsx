@@ -27,7 +27,7 @@ const Chat = () => {
         height={"90%"}
         sx={{
           overflowX: "hidden",
-          overflowY: "auto"
+          overflowY: "auto",
         }}
       >
       
