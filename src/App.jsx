@@ -3,11 +3,15 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import ProtectRoute from './components/auth/ProtectRoute';
 import {LayoutLoader} from './components/layout/loaders';
 
+
 const Home = lazy(() => import('./pages/home'));
 const Login = lazy(() => import('./pages/Login'));
 const Chat = lazy(() => import('./pages/Chat'));
 const Groups = lazy(() => import('./pages/Group'));
 const Notfound = lazy(() => import("./pages/Notfound"))
+
+const AdminLogin = lazy(() => import('./pages/Admin/AdminLogin'));
+const Dashboard = lazy(() => import('./pages/Admin/Dashboard'))
 
 let user = true;
 
@@ -28,6 +32,10 @@ const App = () => {
               </ProtectRoute>
             }
           />
+
+          <Route path='/admin' element={<AdminLogin/>}/>
+          <Route path='/admin/dashboard' element={<Dashboard/>}/>
+
           <Route path='*' element={<Notfound/>}/>
         </Routes>
       </Suspense>
